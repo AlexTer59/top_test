@@ -9,22 +9,24 @@ def is_valid_answer(answer):
         else:
             return False
     else:
-        print("Пожалуйста, введите корректный режим работы алгоритма:")
-        answer = input()
-        is_valid_answer(answer)
+        print("Пожалуйста, введите корректный режим работы алгоритма: шифрование/дешифрование")
+        answer = input().lower()
+        answer = is_valid_answer(answer)
+        return answer
 
 
 # Проверка правильности введенного алфавита
-def is_valid_alphabet(answer):
-    if answer == 'русский' or answer == 'английский':
-        if answer == 'русский':
+def is_valid_alphabet(alph_answer):
+    if alph_answer == 'русский' or alph_answer == 'английский':
+        if alph_answer == 'русский':
             return True
         else:
             return False
     else:
         print("Пожалуйста, введите корректный алфавит: русский/английский")
-        answer = input()
-        is_valid_answer(answer)
+        alph_answer = input().lower()
+        alph_answer = is_valid_alphabet(alph_answer)
+        return alph_answer
 
 
 # Проверка правильности введенного числа сдвига
@@ -80,12 +82,12 @@ def decrypt(alph, num, txt):
 # Главная программа
 
 print("Выберите направлене роботы алгоритма: шифрование/дешифрование?")
-what_to_do = input()
+what_to_do = input().lower()
 what_to_do = is_valid_answer(what_to_do)
 print("Введите текст с которым необходимо работать:")
 text = input()
 print("Выберите алфавит: русский/английский")
-what_alphabet = input()
+what_alphabet = input().lower()
 what_alphabet = is_valid_alphabet(what_alphabet)
 print("Введите величину сдвига:")
 shift = input()
