@@ -1,4 +1,3 @@
-import math
 import alphabets
 
 
@@ -59,7 +58,6 @@ def encrypt(alph, num, txt):
     return final_text
 
 
-
 # Алгоритм дешифрования
 def decrypt(alph, num, txt):
     final_text = ""
@@ -80,7 +78,7 @@ def decrypt(alph, num, txt):
 
 
 # Главная программа
-a = 0
+
 print("Выберите направлене роботы алгоритма: шифрование/дешифрование?")
 what_to_do = input()
 what_to_do = is_valid_answer(what_to_do)
